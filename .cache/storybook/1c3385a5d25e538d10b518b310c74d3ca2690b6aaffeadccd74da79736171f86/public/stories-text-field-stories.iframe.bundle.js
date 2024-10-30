@@ -36,6 +36,116 @@ TextFieldComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([(0,_angu
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+/*
+  MIT License http://www.opensource.org/licenses/mit-license.php
+  Author Tobias Koppers @sokra
+*/
+module.exports = function (cssWithMappingToString) {
+  var list = [];
+
+  // return the list of modules as css string
+  list.toString = function toString() {
+    return this.map(function (item) {
+      var content = "";
+      var needLayer = typeof item[5] !== "undefined";
+      if (item[4]) {
+        content += "@supports (".concat(item[4], ") {");
+      }
+      if (item[2]) {
+        content += "@media ".concat(item[2], " {");
+      }
+      if (needLayer) {
+        content += "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {");
+      }
+      content += cssWithMappingToString(item);
+      if (needLayer) {
+        content += "}";
+      }
+      if (item[2]) {
+        content += "}";
+      }
+      if (item[4]) {
+        content += "}";
+      }
+      return content;
+    }).join("");
+  };
+
+  // import a list of modules into the list
+  list.i = function i(modules, media, dedupe, supports, layer) {
+    if (typeof modules === "string") {
+      modules = [[null, modules, undefined]];
+    }
+    var alreadyImportedModules = {};
+    if (dedupe) {
+      for (var k = 0; k < this.length; k++) {
+        var id = this[k][0];
+        if (id != null) {
+          alreadyImportedModules[id] = true;
+        }
+      }
+    }
+    for (var _k = 0; _k < modules.length; _k++) {
+      var item = [].concat(modules[_k]);
+      if (dedupe && alreadyImportedModules[item[0]]) {
+        continue;
+      }
+      if (typeof layer !== "undefined") {
+        if (typeof item[5] === "undefined") {
+          item[5] = layer;
+        } else {
+          item[1] = "@layer".concat(item[5].length > 0 ? " ".concat(item[5]) : "", " {").concat(item[1], "}");
+          item[5] = layer;
+        }
+      }
+      if (media) {
+        if (!item[2]) {
+          item[2] = media;
+        } else {
+          item[1] = "@media ".concat(item[2], " {").concat(item[1], "}");
+          item[2] = media;
+        }
+      }
+      if (supports) {
+        if (!item[4]) {
+          item[4] = "".concat(supports);
+        } else {
+          item[1] = "@supports (".concat(item[4], ") {").concat(item[1], "}");
+          item[4] = supports;
+        }
+      }
+      list.push(item);
+    }
+  };
+  return list;
+};
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/noSourceMaps.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/noSourceMaps.js ***!
+  \**************************************************************/
+/***/ ((module) => {
+
+"use strict";
+
+
+module.exports = function (i) {
+  return i[1];
+};
+
+/***/ }),
+
 /***/ "./src/stories/ text-field.stories.ts":
 /*!********************************************!*\
   !*** ./src/stories/ text-field.stories.ts ***!
@@ -49,21 +159,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   __namedExportsOrder: () => (/* binding */ __namedExportsOrder),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _storybook_angular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @storybook/angular */ "./node_modules/@storybook/angular/dist/index.mjs");
-/* harmony import */ var _app_text_field_text_field_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../app/text-field/text-field.component */ "./src/app/text-field/text-field.component.ts");
-
+/* harmony import */ var _app_text_field_text_field_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app/text-field/text-field.component */ "./src/app/text-field/text-field.component.ts");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   title: 'Components/TextField',
-  component: _app_text_field_text_field_component__WEBPACK_IMPORTED_MODULE_1__.TextFieldComponent,
-  decorators: [(0,_storybook_angular__WEBPACK_IMPORTED_MODULE_0__.moduleMetadata)({
-    imports: [_app_text_field_text_field_component__WEBPACK_IMPORTED_MODULE_1__.TextFieldComponent] // Hier importieren, statt deklarieren
-  })]
+  component: _app_text_field_text_field_component__WEBPACK_IMPORTED_MODULE_0__.TextFieldComponent,
+  parameters: {
+    docs: {
+      description: {
+        component: `### HTML Code
+        \`\`\`html
+        <div class="text-field">
+          <label for="inputField">Textfeld:</label>
+          <input id="inputField" type="text" placeholder="Geben Sie Text ein" />
+          <p class="text-field__info-text">Hier können Sie Ihren Text eingeben.</p>
+        </div>
+        \`\`\`
+
+        ### CSS Code
+        \`\`\`css
+        .text-field {
+          display: flex;
+          flex-direction: column;
+        }
+        \`\`\`
+        `
+      }
+    }
+  }
 });
-const Default = {
-  render: args => ({
-    props: args
-  })
+const Template = args => ({
+  props: args
+});
+const Default = Template.bind({});
+Default.args = {
+  value: 'Standardwert'
 };
 ;
 const __namedExportsOrder = ["Default"];
@@ -72,7 +202,7 @@ Default.parameters = {
   docs: {
     ...Default.parameters?.docs,
     source: {
-      originalSource: "{\n  render: (args: TextFieldComponent) => ({\n    props: args\n  })\n}",
+      originalSource: "(args: any) => ({\n  props: args\n})",
       ...Default.parameters?.docs?.source
     }
   }
