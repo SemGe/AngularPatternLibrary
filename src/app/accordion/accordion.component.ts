@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
+  standalone: true, // Dies macht die Komponente standalone
   selector: 'app-accordion',
   template: `
     <div class="accordion" (click)="toggle()">

@@ -1,23 +1,16 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TestBed } from '@angular/core/testing';
 import { AccordionComponent } from './accordion.component';
 
 describe('AccordionComponent', () => {
-  let component: AccordionComponent;
-  let fixture: ComponentFixture<AccordionComponent>;
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AccordionComponent]
-    })
-    .compileComponents();
-
-    fixture = TestBed.createComponent(AccordionComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+      imports: [AccordionComponent], // Hier importieren wir die Komponente als standalone
+    }).compileComponents();
   });
 
   it('should create', () => {
+    const fixture = TestBed.createComponent(AccordionComponent);
+    const component = fixture.componentInstance;
     expect(component).toBeTruthy();
   });
 });

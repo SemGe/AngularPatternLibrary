@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
+  standalone: true, // Diese Zeile macht die Komponente standalone
   selector: 'app-dropdown',
   template: `
     <div class="dropdown-container">
@@ -14,5 +15,5 @@ import { Component, Input } from '@angular/core';
 })
 export class DropdownComponent {
   @Input() label: string = 'Select an option';
-  @Input() options: string[] = ['Option 1', 'Option 2', 'Option 3']; // Hier werden 3 Optionen hinzugefügt
+  @Input() options: string[] = ['Option 1', 'Option 2', 'Option 3'];
 }
