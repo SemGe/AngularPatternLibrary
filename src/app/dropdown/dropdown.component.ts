@@ -1,19 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  standalone: true, // Diese Zeile macht die Komponente standalone
   selector: 'app-dropdown',
-  template: `
-    <div class="dropdown-container">
-      <label>{{ label }}</label>
-      <select>
-        <option *ngFor="let option of options" [value]="option">{{ option }}</option>
-      </select>
-    </div>
-  `,
-  styleUrls: ['./dropdown.component.css']
+  standalone: true, // Angabe, dass es eine Standalone-Komponente ist
+  templateUrl: './dropdown.component.html',
+  styleUrls: ['./dropdown.component.css'],
+  imports: [CommonModule] // CommonModule hinzufügen
 })
-export class DropdownComponent {
-  @Input() label: string = 'Select an option';
-  @Input() options: string[] = ['Option 1', 'Option 2', 'Option 3'];
-}
+export class DropdownComponent { }

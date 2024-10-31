@@ -1,20 +1,16 @@
-import { Meta, StoryObj } from '@storybook/angular';
+import { Meta, StoryFn } from '@storybook/angular';
 import { DropdownComponent } from '../app/dropdown/dropdown.component';
 
-const meta: Meta<DropdownComponent> = {
+export default {
   title: 'Components/Dropdown',
   component: DropdownComponent,
-  argTypes: {
-    label: { control: 'text' },
-    options: { control: { type: 'object' } } // 'object' akzeptiert Arrays und sollte kompatibler sein
-  }
-};
+} as Meta;
 
-export default meta;
+const Template: StoryFn = (args) => ({
+  props: args,
+});
 
-export const Default: StoryObj<DropdownComponent> = {
-  args: {
-    label: 'Select an option',
-    options: ['Option 1', 'Option 2', 'Option 3']
-  }
+export const Default = Template.bind({});
+Default.args = {
+  // Hier kannst du Standardwerte für das Dropdown hinzufügen
 };
