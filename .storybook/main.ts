@@ -7,15 +7,18 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-docs',
     '@storybook/addon-mdx-gfm',
-    '@chromatic-com/storybook'
+    '@chromatic-com/storybook',
+    '@storybook/addon-controls',
+    '@storybook/addon-actions',
+    '@storybook/addon-viewport',
   ],
   framework: {
     name: '@storybook/angular',
     options: {},
   },
   docs: {
-    autodocs: true
-  }
+    autodocs: true,
+  },
 };
 
 export default config;

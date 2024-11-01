@@ -19,7 +19,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const getProjectAnnotations = () => (0,storybook_internal_preview_api__WEBPACK_IMPORTED_MODULE_1__.composeConfigs)([__webpack_require__(/*! ./node_modules/@storybook/angular/dist/client/docs/config.js */ "./node_modules/@storybook/angular/dist/client/docs/config.js"), __webpack_require__(/*! ./node_modules/@storybook/angular/dist/client/config.js */ "./node_modules/@storybook/angular/dist/client/config.js"), __webpack_require__(/*! ./node_modules/@storybook/addon-links/dist/preview.mjs */ "./node_modules/@storybook/addon-links/dist/preview.mjs"), __webpack_require__(/*! ./node_modules/@storybook/addon-essentials/dist/actions/preview.mjs */ "./node_modules/@storybook/addon-essentials/dist/actions/preview.mjs"), __webpack_require__(/*! ./node_modules/@storybook/addon-essentials/dist/backgrounds/preview.mjs */ "./node_modules/@storybook/addon-essentials/dist/backgrounds/preview.mjs"), __webpack_require__(/*! ./node_modules/@storybook/addon-essentials/dist/viewport/preview.mjs */ "./node_modules/@storybook/addon-essentials/dist/viewport/preview.mjs"), __webpack_require__(/*! ./node_modules/@storybook/addon-essentials/dist/measure/preview.mjs */ "./node_modules/@storybook/addon-essentials/dist/measure/preview.mjs"), __webpack_require__(/*! ./node_modules/@storybook/addon-essentials/dist/outline/preview.mjs */ "./node_modules/@storybook/addon-essentials/dist/outline/preview.mjs"), __webpack_require__(/*! ./node_modules/@storybook/addon-essentials/dist/highlight/preview.mjs */ "./node_modules/@storybook/addon-essentials/dist/highlight/preview.mjs"), __webpack_require__(/*! ./node_modules/@storybook/addon-docs/dist/preview.mjs */ "./node_modules/@storybook/addon-docs/dist/preview.mjs")]);
+const getProjectAnnotations = () => (0,storybook_internal_preview_api__WEBPACK_IMPORTED_MODULE_1__.composeConfigs)([__webpack_require__(/*! ./node_modules/@storybook/angular/dist/client/docs/config.js */ "./node_modules/@storybook/angular/dist/client/docs/config.js"), __webpack_require__(/*! ./node_modules/@storybook/angular/dist/client/config.js */ "./node_modules/@storybook/angular/dist/client/config.js"), __webpack_require__(/*! ./node_modules/@storybook/addon-links/dist/preview.mjs */ "./node_modules/@storybook/addon-links/dist/preview.mjs"), __webpack_require__(/*! ./node_modules/@storybook/addon-essentials/dist/backgrounds/preview.mjs */ "./node_modules/@storybook/addon-essentials/dist/backgrounds/preview.mjs"), __webpack_require__(/*! ./node_modules/@storybook/addon-essentials/dist/measure/preview.mjs */ "./node_modules/@storybook/addon-essentials/dist/measure/preview.mjs"), __webpack_require__(/*! ./node_modules/@storybook/addon-essentials/dist/outline/preview.mjs */ "./node_modules/@storybook/addon-essentials/dist/outline/preview.mjs"), __webpack_require__(/*! ./node_modules/@storybook/addon-essentials/dist/highlight/preview.mjs */ "./node_modules/@storybook/addon-essentials/dist/highlight/preview.mjs"), __webpack_require__(/*! ./node_modules/@storybook/addon-docs/dist/preview.mjs */ "./node_modules/@storybook/addon-docs/dist/preview.mjs"), __webpack_require__(/*! ./node_modules/@storybook/addon-actions/dist/preview.mjs */ "./node_modules/@storybook/addon-actions/dist/preview.mjs"), __webpack_require__(/*! ./node_modules/@storybook/addon-viewport/dist/preview.mjs */ "./node_modules/@storybook/addon-viewport/dist/preview.mjs")]);
 const channel = (0,storybook_internal_channels__WEBPACK_IMPORTED_MODULE_0__.createBrowserChannel)({
   page: 'preview'
 });
@@ -39,7 +39,7 @@ if (true) {
       importFn: _storybook_stories_js__WEBPACK_IMPORTED_MODULE_3__.importFn
     });
   })(__WEBPACK_OUTDATED_DEPENDENCIES__); });
-  module.hot.accept([/*! ./node_modules/@storybook/angular/dist/client/docs/config.js */ "./node_modules/@storybook/angular/dist/client/docs/config.js", /*! ./node_modules/@storybook/angular/dist/client/config.js */ "./node_modules/@storybook/angular/dist/client/config.js", /*! ./node_modules/@storybook/addon-links/dist/preview.mjs */ "./node_modules/@storybook/addon-links/dist/preview.mjs", /*! ./node_modules/@storybook/addon-essentials/dist/actions/preview.mjs */ "./node_modules/@storybook/addon-essentials/dist/actions/preview.mjs", /*! ./node_modules/@storybook/addon-essentials/dist/backgrounds/preview.mjs */ "./node_modules/@storybook/addon-essentials/dist/backgrounds/preview.mjs", /*! ./node_modules/@storybook/addon-essentials/dist/viewport/preview.mjs */ "./node_modules/@storybook/addon-essentials/dist/viewport/preview.mjs", /*! ./node_modules/@storybook/addon-essentials/dist/measure/preview.mjs */ "./node_modules/@storybook/addon-essentials/dist/measure/preview.mjs", /*! ./node_modules/@storybook/addon-essentials/dist/outline/preview.mjs */ "./node_modules/@storybook/addon-essentials/dist/outline/preview.mjs", /*! ./node_modules/@storybook/addon-essentials/dist/highlight/preview.mjs */ "./node_modules/@storybook/addon-essentials/dist/highlight/preview.mjs", /*! ./node_modules/@storybook/addon-docs/dist/preview.mjs */ "./node_modules/@storybook/addon-docs/dist/preview.mjs"], __WEBPACK_OUTDATED_DEPENDENCIES__ => { (() => {
+  module.hot.accept([/*! ./node_modules/@storybook/angular/dist/client/docs/config.js */ "./node_modules/@storybook/angular/dist/client/docs/config.js", /*! ./node_modules/@storybook/angular/dist/client/config.js */ "./node_modules/@storybook/angular/dist/client/config.js", /*! ./node_modules/@storybook/addon-links/dist/preview.mjs */ "./node_modules/@storybook/addon-links/dist/preview.mjs", /*! ./node_modules/@storybook/addon-essentials/dist/backgrounds/preview.mjs */ "./node_modules/@storybook/addon-essentials/dist/backgrounds/preview.mjs", /*! ./node_modules/@storybook/addon-essentials/dist/measure/preview.mjs */ "./node_modules/@storybook/addon-essentials/dist/measure/preview.mjs", /*! ./node_modules/@storybook/addon-essentials/dist/outline/preview.mjs */ "./node_modules/@storybook/addon-essentials/dist/outline/preview.mjs", /*! ./node_modules/@storybook/addon-essentials/dist/highlight/preview.mjs */ "./node_modules/@storybook/addon-essentials/dist/highlight/preview.mjs", /*! ./node_modules/@storybook/addon-docs/dist/preview.mjs */ "./node_modules/@storybook/addon-docs/dist/preview.mjs", /*! ./node_modules/@storybook/addon-actions/dist/preview.mjs */ "./node_modules/@storybook/addon-actions/dist/preview.mjs", /*! ./node_modules/@storybook/addon-viewport/dist/preview.mjs */ "./node_modules/@storybook/addon-viewport/dist/preview.mjs"], __WEBPACK_OUTDATED_DEPENDENCIES__ => { (() => {
     // getProjectAnnotations has changed so we need to patch the new one in
     preview.onGetProjectAnnotationsChanged({
       getProjectAnnotations
@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
     if(true) {
       (function() {
         var localsJsonString = undefined;
-        // 1730391638105
+        // 1730415088620
         var cssReload = __webpack_require__(/*! ../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {});
         // only invalidate when locals change
         if (
@@ -172,6 +172,16 @@ var map = {
 	"./stories/accordion.stories.ts": [
 		"./src/stories/accordion.stories.ts",
 		"stories-accordion-stories"
+	],
+	"./stories/dropdown-copilot.stories": [
+		"./src/stories/dropdown-copilot.stories.ts",
+		"vendors-node_modules_storybook_angular_dist_index_mjs-node_modules_css-loader_dist_runtime_ap-baccda",
+		"stories-dropdown-copilot-stories"
+	],
+	"./stories/dropdown-copilot.stories.ts": [
+		"./src/stories/dropdown-copilot.stories.ts",
+		"vendors-node_modules_storybook_angular_dist_index_mjs-node_modules_css-loader_dist_runtime_ap-baccda",
+		"stories-dropdown-copilot-stories"
 	],
 	"./stories/dropdown.stories": [
 		"./src/stories/dropdown.stories.ts",
@@ -271,7 +281,7 @@ module.exports = __STORYBOOK_MODULE_PREVIEW_API__;
 },
 /******/ __webpack_require__ => { // webpackRuntimeModules
 /******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-/******/ __webpack_require__.O(0, ["vendors-node_modules_storybook_addon-docs_dist_preview_mjs-node_modules_storybook_addon-essen-a388c9"], () => (__webpack_exec__("./node_modules/webpack-hot-middleware/client.js?reload=true&quiet=false&overlay={\"errors\":true,\"warnings\":false,\"runtimeErrors\":false}&noInfo=false"), __webpack_exec__("./storybook-config-entry.js"), __webpack_exec__("./node_modules/zone.js/fesm2015/zone.js"), __webpack_exec__("./node_modules/@angular/compiler/fesm2022/compiler.mjs"), __webpack_exec__("./src/styles.css?ngGlobalStyle")));
+/******/ __webpack_require__.O(0, ["vendors-node_modules_storybook_addon-actions_dist_preview_mjs-node_modules_storybook_addon-do-46fd45"], () => (__webpack_exec__("./node_modules/webpack-hot-middleware/client.js?reload=true&quiet=false&overlay={\"errors\":true,\"warnings\":false,\"runtimeErrors\":false}&noInfo=false"), __webpack_exec__("./storybook-config-entry.js"), __webpack_exec__("./node_modules/zone.js/fesm2015/zone.js"), __webpack_exec__("./node_modules/@angular/compiler/fesm2022/compiler.mjs"), __webpack_exec__("./src/styles.css?ngGlobalStyle")));
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
