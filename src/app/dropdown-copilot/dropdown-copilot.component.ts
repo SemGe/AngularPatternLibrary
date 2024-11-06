@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-dropdown-copilot',
@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./dropdown-copilot.component.css']
 })
 export class DropdownCopilotComponent {
-  isDropdownOpen = false;
-  options: string[] = ['Option A', 'Option B', 'Option C']; // Beispiel-Optionen für das Dropdown
+  @Input() isDropdownOpen = false; // Erlaubt, den Zustand von außen zu setzen
+  @Input() options: string[] = [];
 
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;

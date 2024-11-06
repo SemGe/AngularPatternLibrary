@@ -1,6 +1,7 @@
 <div class="dropdown" (click)="toggleDropdown()">
     <button class="dropbtn">Dropdown</button>
     <div class="dropdown-content" [class.show]="isDropdownOpen">
-        <a *ngFor="let option of options" href="#">{{ option }}</a>
+      <a *ngFor="let option of options">{{ option }}</a>
     </div>
-</div>
+  </div>
+  

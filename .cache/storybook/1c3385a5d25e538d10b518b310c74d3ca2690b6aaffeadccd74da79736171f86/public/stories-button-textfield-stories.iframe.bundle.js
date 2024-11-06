@@ -1,8 +1,8 @@
-(self["webpackChunkmy_angular_project"] = self["webpackChunkmy_angular_project"] || []).push([["stories-dropdown-copilot-stories"],{
+(self["webpackChunkmy_angular_project"] = self["webpackChunkmy_angular_project"] || []).push([["stories-button-textfield-stories"],{
 
-/***/ "./src/app/dropdown-copilot/dropdown-copilot.component.ts":
+/***/ "./src/app/button-textfield/button-textfield.component.ts":
 /*!****************************************************************!*\
-  !*** ./src/app/dropdown-copilot/dropdown-copilot.component.ts ***!
+  !*** ./src/app/button-textfield/button-textfield.component.ts ***!
   \****************************************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
@@ -55,24 +55,28 @@ var __runInitializers = this && this.__runInitializers || function (thisArg, ini
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.DropdownCopilotComponent = void 0;
+exports.ButtonTextfieldComponent = void 0;
 const core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2022/core.mjs");
-let DropdownCopilotComponent = (() => {
+const forms_1 = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2022/forms.mjs");
+let ButtonTextfieldComponent = (() => {
   let _classDecorators = [(0, core_1.Component)({
-    selector: 'app-dropdown-copilot',
-    template: __webpack_require__(/*! ./dropdown-copilot.component.html?ngResource */ "./src/app/dropdown-copilot/dropdown-copilot.component.html?ngResource"),
-    styles: [__webpack_require__(/*! ./dropdown-copilot.component.css?ngResource */ "./src/app/dropdown-copilot/dropdown-copilot.component.css?ngResource")]
+    selector: 'app-button-textfield',
+    standalone: true,
+    // Macht die Komponente eigenständig
+    imports: [forms_1.FormsModule],
+    // Hier wird FormsModule direkt importiert
+    template: __webpack_require__(/*! ./button-textfield.component.html?ngResource */ "./src/app/button-textfield/button-textfield.component.html?ngResource"),
+    styles: [__webpack_require__(/*! ./button-textfield.component.css?ngResource */ "./src/app/button-textfield/button-textfield.component.css?ngResource")]
   })];
   let _classDescriptor;
   let _classExtraInitializers = [];
   let _classThis;
-  var DropdownCopilotComponent = class {
+  var ButtonTextfieldComponent = class {
     static {
       _classThis = this;
     }
     constructor() {
-      this.isDropdownOpen = false;
-      this.options = [];
+      this.inputValue = '';
     }
     static {
       const _metadata = typeof Symbol === "function" && Symbol.metadata ? Object.create(null) : void 0;
@@ -83,40 +87,29 @@ let DropdownCopilotComponent = (() => {
         name: _classThis.name,
         metadata: _metadata
       }, null, _classExtraInitializers);
-      DropdownCopilotComponent = _classThis = _classDescriptor.value;
+      ButtonTextfieldComponent = _classThis = _classDescriptor.value;
       if (_metadata) Object.defineProperty(_classThis, Symbol.metadata, {
         enumerable: true,
         configurable: true,
         writable: true,
         value: _metadata
       });
-    }
-    toggleDropdown() {
-      this.isDropdownOpen = !this.isDropdownOpen;
-    }
-    static {
-      this.propDecorators = {
-        isDropdownOpen: [{
-          type: core_1.Input
-        }],
-        options: [{
-          type: core_1.Input
-        }]
-      };
-    }
-    static {
       __runInitializers(_classThis, _classExtraInitializers);
     }
+    onButtonClick() {
+      console.log('Button clicked with input:', this.inputValue);
+      // Fügen Sie hier die gewünschte Funktionalität hinzu
+    }
   };
-  return DropdownCopilotComponent = _classThis;
+  return ButtonTextfieldComponent = _classThis;
 })();
-exports.DropdownCopilotComponent = DropdownCopilotComponent;
+exports.ButtonTextfieldComponent = ButtonTextfieldComponent;
 
 /***/ }),
 
-/***/ "./src/stories/dropdown-copilot.stories.ts":
+/***/ "./src/stories/button-textfield.stories.ts":
 /*!*************************************************!*\
-  !*** ./src/stories/dropdown-copilot.stories.ts ***!
+  !*** ./src/stories/button-textfield.stories.ts ***!
   \*************************************************/
 /***/ ((module, exports, __webpack_require__) => {
 
@@ -126,47 +119,30 @@ exports.DropdownCopilotComponent = DropdownCopilotComponent;
 Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
-exports.OpenInDocs = exports.Default = void 0;
-// dropdown-copilot.stories.ts
+exports.Default = void 0;
 const angular_1 = __webpack_require__(/*! @storybook/angular */ "./node_modules/@storybook/angular/dist/index.mjs");
-const dropdown_copilot_component_1 = __webpack_require__(/*! ../app/dropdown-copilot/dropdown-copilot.component */ "./src/app/dropdown-copilot/dropdown-copilot.component.ts");
+const button_textfield_component_1 = __webpack_require__(/*! ../app/button-textfield/button-textfield.component */ "./src/app/button-textfield/button-textfield.component.ts");
+const forms_1 = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2022/forms.mjs");
 exports["default"] = {
-  title: 'DropdownCopilot',
-  component: dropdown_copilot_component_1.DropdownCopilotComponent,
+  title: 'Components/ButtonTextfield',
+  component: button_textfield_component_1.ButtonTextfieldComponent,
   decorators: [(0, angular_1.moduleMetadata)({
-    declarations: [dropdown_copilot_component_1.DropdownCopilotComponent]
+    imports: [button_textfield_component_1.ButtonTextfieldComponent, forms_1.FormsModule] // Füge die Komponente in das imports-Array hinzu
   })]
 };
-const Default = () => ({
-  component: dropdown_copilot_component_1.DropdownCopilotComponent,
-  props: {
-    options: ['Option A', 'Option B', 'Option C'] // Optionen für das Dropdown
-  }
+const Template = args => ({
+  props: args
 });
-exports.Default = Default;
-// Füge diese neue Story hinzu
-const OpenInDocs = () => ({
-  component: dropdown_copilot_component_1.DropdownCopilotComponent,
-  props: {
-    isDropdownOpen: true,
-    // Setze den Dropdown-Zustand auf geöffnet
-    options: ['Option A', 'Option B', 'Option C'] // Optionen für das Dropdown
-  }
-});
-exports.OpenInDocs = OpenInDocs;
-exports.OpenInDocs.parameters = {
-  docs: {
-    source: {
-      code: `<app-dropdown-copilot [isDropdownOpen]="true" [options]="['Option A', 'Option B', 'Option C']"></app-dropdown-copilot>`
-    }
-  }
-};;module.exports.__namedExportsOrder = ["OpenInDocs","Default"];
+exports.Default = Template.bind({});
+exports.Default.args = {
+  inputValue: ''
+};;module.exports.__namedExportsOrder = ["Default"];
 
 /***/ }),
 
-/***/ "./src/app/dropdown-copilot/dropdown-copilot.component.css?ngResource":
+/***/ "./src/app/button-textfield/button-textfield.component.css?ngResource":
 /*!****************************************************************************!*\
-  !*** ./src/app/dropdown-copilot/dropdown-copilot.component.css?ngResource ***!
+  !*** ./src/app/button-textfield/button-textfield.component.css?ngResource ***!
   \****************************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
@@ -175,60 +151,38 @@ var ___CSS_LOADER_API_NO_SOURCEMAP_IMPORT___ = __webpack_require__(/*! ../../../
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(___CSS_LOADER_API_NO_SOURCEMAP_IMPORT___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    overflow: visible; /* Ensure the dropdown content is not clipped */
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-.show {
-    display: block;
-}
-
-.dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
+___CSS_LOADER_EXPORT___.push([module.id, `.button-textfield {
+    display: flex;
+    align-items: center;
+  }
+  
+  .button-textfield input {
+    margin-right: 10px;
+    padding: 8px;
+    font-size: 14px;
+  }
+  
+  .button-textfield button {
+    padding: 8px 16px;
+    font-size: 14px;
     cursor: pointer;
-}`, ""]);
+  }`, ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___.toString();
 
 
 /***/ }),
 
-/***/ "./src/app/dropdown-copilot/dropdown-copilot.component.html?ngResource":
+/***/ "./src/app/button-textfield/button-textfield.component.html?ngResource":
 /*!*****************************************************************************!*\
-  !*** ./src/app/dropdown-copilot/dropdown-copilot.component.html?ngResource ***!
+  !*** ./src/app/button-textfield/button-textfield.component.html?ngResource ***!
   \*****************************************************************************/
 /***/ ((module) => {
 
 "use strict";
-module.exports = "<div class=\"dropdown\" (click)=\"toggleDropdown()\">\n    <button class=\"dropbtn\">Dropdown</button>\n    <div class=\"dropdown-content\" [class.show]=\"isDropdownOpen\">\n      <a *ngFor=\"let option of options\">{{ option }}</a>\n    </div>\n  </div>\n  ";
+module.exports = "<div class=\"button-textfield\">\n    <input type=\"text\" [(ngModel)]=\"inputValue\" placeholder=\"Enter text here\">\n    <button (click)=\"onButtonClick()\">Submit</button>\n  </div>";
 
 /***/ })
 
 }]);
-//# sourceMappingURL=stories-dropdown-copilot-stories.iframe.bundle.js.map
+//# sourceMappingURL=stories-button-textfield-stories.iframe.bundle.js.map

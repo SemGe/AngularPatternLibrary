@@ -1,4 +1,5 @@
-(self["webpackChunkmy_angular_project"] = self["webpackChunkmy_angular_project"] || []).push([["stories-dropdown-copilot-stories"],{
+"use strict";
+self["webpackHotUpdatemy_angular_project"]("stories-dropdown-copilot-stories",{
 
 /***/ "./src/app/dropdown-copilot/dropdown-copilot.component.ts":
 /*!****************************************************************!*\
@@ -6,7 +7,6 @@
   \****************************************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-"use strict";
 
 
 var __esDecorate = this && this.__esDecorate || function (ctor, descriptorIn, decorators, contextIn, initializers, extraInitializers) {
@@ -120,7 +120,6 @@ exports.DropdownCopilotComponent = DropdownCopilotComponent;
   \*************************************************/
 /***/ ((module, exports, __webpack_require__) => {
 
-"use strict";
 
 
 Object.defineProperty(exports, "__esModule", ({
@@ -162,73 +161,7 @@ exports.OpenInDocs.parameters = {
   }
 };;module.exports.__namedExportsOrder = ["OpenInDocs","Default"];
 
-/***/ }),
-
-/***/ "./src/app/dropdown-copilot/dropdown-copilot.component.css?ngResource":
-/*!****************************************************************************!*\
-  !*** ./src/app/dropdown-copilot/dropdown-copilot.component.css?ngResource ***!
-  \****************************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-// Imports
-var ___CSS_LOADER_API_NO_SOURCEMAP_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/noSourceMaps.js */ "./node_modules/css-loader/dist/runtime/noSourceMaps.js");
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(___CSS_LOADER_API_NO_SOURCEMAP_IMPORT___);
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, `.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    overflow: visible; /* Ensure the dropdown content is not clipped */
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-.show {
-    display: block;
-}
-
-.dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}`, ""]);
-// Exports
-module.exports = ___CSS_LOADER_EXPORT___.toString();
-
-
-/***/ }),
-
-/***/ "./src/app/dropdown-copilot/dropdown-copilot.component.html?ngResource":
-/*!*****************************************************************************!*\
-  !*** ./src/app/dropdown-copilot/dropdown-copilot.component.html?ngResource ***!
-  \*****************************************************************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = "<div class=\"dropdown\" (click)=\"toggleDropdown()\">\n    <button class=\"dropbtn\">Dropdown</button>\n    <div class=\"dropdown-content\" [class.show]=\"isDropdownOpen\">\n      <a *ngFor=\"let option of options\">{{ option }}</a>\n    </div>\n  </div>\n  ";
-
 /***/ })
 
-}]);
-//# sourceMappingURL=stories-dropdown-copilot-stories.iframe.bundle.js.map
+});
+//# sourceMappingURL=stories-dropdown-copilot-stories.02cf5ba2d6f0b2104eec.hot-update.js.map
