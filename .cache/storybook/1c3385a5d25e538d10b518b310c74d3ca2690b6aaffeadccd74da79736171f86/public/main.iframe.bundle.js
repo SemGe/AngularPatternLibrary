@@ -123,7 +123,7 @@ __webpack_require__.r(__webpack_exports__);
     if(true) {
       (function() {
         var localsJsonString = undefined;
-        // 1730910728076
+        // 1730911920310
         var cssReload = __webpack_require__(/*! ../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {});
         // only invalidate when locals change
         if (
@@ -202,6 +202,16 @@ var map = {
 	"./stories/dropdown.stories.ts": [
 		"./src/stories/dropdown.stories.ts",
 		"stories-dropdown-stories"
+	],
+	"./stories/modal-dialog.stories": [
+		"./src/stories/modal-dialog.stories.ts",
+		"vendors-node_modules_storybook_angular_dist_index_mjs-node_modules_css-loader_dist_runtime_ap-baccda",
+		"stories-modal-dialog-stories"
+	],
+	"./stories/modal-dialog.stories.ts": [
+		"./src/stories/modal-dialog.stories.ts",
+		"vendors-node_modules_storybook_angular_dist_index_mjs-node_modules_css-loader_dist_runtime_ap-baccda",
+		"stories-modal-dialog-stories"
 	]
 };
 function webpackAsyncContext(req) {

@@ -1,0 +1,8 @@
+<button (click)="open()">Open Modal</button>
+
+<div class="modal" *ngIf="isOpen">
+  <div class="modal-content">
+    <span class="close-button" (click)="close()">×</span>
+    <p>Hier ist der Inhalt des Modals</p>
+  </div>
+</div>
