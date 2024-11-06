@@ -1,8 +1,12 @@
-<button (click)="open()">Open Modal</button>
+<button class="open-modal-button" (click)="openModal()">Modal öffnen</button>
 
-<div class="modal" *ngIf="isOpen">
-  <div class="modal-content">
-    <span class="close-button" (click)="close()">×</span>
+<div class="modal-background" *ngIf="isModalOpen" (click)="closeModal()">
+  <div #modal class="modal-dialog" 
+       (mousedown)="startDragging($event)" 
+       (mousemove)="moveDialog($event)" 
+       (mouseup)="stopDragging($event)" 
+       (click)="$event.stopPropagation()">
+    <button class="close-button" (click)="closeModal()">✖</button>
     <p>Hier ist der Inhalt des Modals</p>
   </div>
 </div>
