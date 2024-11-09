@@ -71,7 +71,10 @@ let ModalDialogComponent = (() => {
       _classThis = this;
     }
     constructor() {
-      this.isOpen = false;
+      this.isModalOpen = false;
+      this.isDragging = false;
+      this.offsetX = 0;
+      this.offsetY = 0;
     }
     static {
       const _metadata = typeof Symbol === "function" && Symbol.metadata ? Object.create(null) : void 0;
@@ -89,13 +92,39 @@ let ModalDialogComponent = (() => {
         writable: true,
         value: _metadata
       });
+    }
+    openModal() {
+      this.isModalOpen = true;
+    }
+    closeModal() {
+      this.isModalOpen = false;
+    }
+    startDragging(event) {
+      this.isDragging = true;
+      this.offsetX = event.clientX - this.modal.nativeElement.getBoundingClientRect().left;
+      this.offsetY = event.clientY - this.modal.nativeElement.getBoundingClientRect().top;
+    }
+    moveDialog(event) {
+      if (this.isDragging) {
+        this.modal.nativeElement.style.left = `${event.clientX - this.offsetX}px`;
+        this.modal.nativeElement.style.top = `${event.clientY - this.offsetY}px`;
+      }
+    }
+    stopDragging() {
+      this.isDragging = false;
+    }
+    static {
+      this.propDecorators = {
+        modal: [{
+          type: core_1.ViewChild,
+          args: ['modal', {
+            static: false
+          }]
+        }]
+      };
+    }
+    static {
       __runInitializers(_classThis, _classExtraInitializers);
-    }
-    open() {
-      this.isOpen = true;
-    }
-    close() {
-      this.isOpen = false;
     }
   };
   return ModalDialogComponent = _classThis;
@@ -144,34 +173,44 @@ var ___CSS_LOADER_API_NO_SOURCEMAP_IMPORT___ = __webpack_require__(/*! ../../../
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(___CSS_LOADER_API_NO_SOURCEMAP_IMPORT___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, `.modal {
-    display: flex;
+___CSS_LOADER_EXPORT___.push([module.id, `.open-modal-button {
+    background-color: #4CAF50; /* Grün */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal-background {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.5);
+    display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
   }
   
-  .modal-content {
+  .modal-dialog {
+    position: absolute;
     background: white;
-    padding: 20px;
-    border-radius: 5px;
-    width: 400px;
-    max-width: 90%;
-    position: relative;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: move;
   }
   
   .close-button {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 5px;
+    right: 5px;
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
     cursor: pointer;
-    font-size: 20px;
   }
   `, ""]);
 // Exports
@@ -187,7 +226,7 @@ module.exports = ___CSS_LOADER_EXPORT___.toString();
 /***/ ((module) => {
 
 "use strict";
-module.exports = "<button (click)=\"open()\">Open Modal</button>\n\n<div class=\"modal\" *ngIf=\"isOpen\">\n  <div class=\"modal-content\">\n    <span class=\"close-button\" (click)=\"close()\">×</span>\n    <p>Hier ist der Inhalt des Modals</p>\n  </div>\n</div>\n";
+module.exports = "<button class=\"open-modal-button\" (click)=\"openModal()\">Modal öffnen</button>\n\n<div class=\"modal-background\" *ngIf=\"isModalOpen\" (click)=\"closeModal()\">\n  <div #modal class=\"modal-dialog\" \n       (mousedown)=\"startDragging($event)\" \n       (mousemove)=\"moveDialog($event)\" \n       (mouseup)=\"stopDragging($event)\" \n       (click)=\"$event.stopPropagation()\">\n    <button class=\"close-button\" (click)=\"closeModal()\">✖</button>\n    <p>Hier ist der Inhalt des Modals</p>\n  </div>\n</div>\n";
 
 /***/ })
 

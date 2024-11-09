@@ -1,23 +1,34 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
-import { ModalDialogComponent } from './modal-dialog.component';
+@Component({
+  selector: 'app-modal-dialog',
+  templateUrl: './modal-dialog.component.html',
+  styleUrls: ['./modal-dialog.component.css']
+})
+export class ModalDialogComponent {
+  isModalOpen = false;
 
-describe('ModalDialogComponent', () => {
-  let component: ModalDialogComponent;
-  let fixture: ComponentFixture<ModalDialogComponent>;
+  // Fügen Sie diese Eigenschaften hinzu
+  @ViewChild('modal', { static: false }) modal!: ElementRef;
+  offsetX: number = 0;
+  offsetY: number = 0;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ModalDialogComponent]
-    })
-    .compileComponents();
+  openModal() {
+    this.isModalOpen = true;
+  }
 
-    fixture = TestBed.createComponent(ModalDialogComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  closeModal() {
+    this.isModalOpen = false;
+  }
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+  startDragging(event: MouseEvent) {
+    this.offsetX = event.clientX - this.modal.nativeElement.getBoundingClientRect().left;
+    this.offsetY = event.clientY - this.modal.nativeElement.getBoundingClientRect().top;
+  }
+
+  moveDialog(event: MouseEvent) {
+    this.modal.nativeElement.style.left = `${event.clientX - this.offsetX}px`;
+    this.modal.nativeElement.style.top = `${event.clientY - this.offsetY}px`;
+  }
+}
+
